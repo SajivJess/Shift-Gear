@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101e27">
+  <title>SHIFTGEAR — Breakwater</title>
+  <!-- BUILD:STYLE -->
+</head>
+<body>
+  <main id="game" aria-label="SHIFTGEAR browser game">
+    <canvas id="view" aria-label="Breakwater district"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div id="boost-edges" class="boost-edges" aria-hidden="true"></div>
+    <div id="reticle" class="reticle" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+
+    <header class="brand"><span class="mark" aria-hidden="true">S</span><div><strong>SHIFTGEAR</strong><small>BREAKWATER DISTRICT</small></div></header>
+
+    <section id="objectives" class="objective panel" aria-label="Current operation">
+      <div class="objective-meta"><span>ACTIVE OPERATION</span><span id="stage-count">1 / 5</span></div>
+      <h2 id="operation-title">Signal Run</h2>
+      <p id="objective-text">Approach the marked sedan.</p>
+      <div class="stages" id="stages" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <div id="distance" class="distance"></div>
+    </section>
+
+    <aside class="navigation" aria-label="Navigation and status">
+      <div class="nav-caption"><span id="district-name">FOUNDRY COURT</span><span id="wanted" aria-label="Security alert" title="Security alert">◇ ◇ ◇</span></div>
+      <button id="map-toggle" type="button" class="map-shell" aria-label="Expand district map" aria-haspopup="dialog" aria-controls="district-map">
+        <canvas id="map" width="416" height="264" aria-hidden="true"></canvas>
+        <span class="map-expand" aria-hidden="true">M · MAP &amp; HEISTS</span>
+      </button>
+      <div class="wallet"><span>NANOTECH CREDIT</span><b id="credits">₡ 0</b></div>
+      <button id="weather" class="weather" type="button" aria-label="Change weather"><span>CONDITIONS</span><b id="weather-label">Clear</b></button>
+    </aside>
+
+    <output id="prompt" class="prompt" hidden aria-live="polite"></output>
+    <output id="toast" class="toast" hidden aria-live="polite"></output>
+
+    <section class="dashboard" aria-label="Vehicle controls">
+      <div class="telemetry panel">
+        <div id="speed-readout" class="speed" hidden><b id="speed">00</b><span>KM/H</span></div>
+        <div id="gear-readout" class="gear-readout"><span id="gear-detail">EQUIPPED</span><b id="equipped">Pulse pistol</b></div>
+        <div class="energy"><div><span id="environment">ON FOOT</span><b id="energy-value">100%</b></div><div class="energy-track"><i id="energy-fill"></i></div>
+          <div id="boost-meter" class="boost-meter" hidden><div><span>NITRO</span><b id="boost-value">100%</b></div><div class="energy-track"><i id="boost-fill"></i></div></div>
+        </div>
+      </div>
+      <div id="modes" class="modes" aria-label="Select vehicle mode" hidden>
+        <button data-mode="road" disabled><kbd>1</kbd><span>Road</span></button>
+        <button data-mode="boost" disabled><kbd>2</kbd><span>Supercar</span></button>
+        <button data-mode="flight" disabled><kbd>3</kbd><span>Flight</span></button>
+        <button data-mode="dive" disabled><kbd>4</kbd><span>Underwater</span></button>
+      </div>
+      <div id="gear" class="modes inventory" aria-label="Inventory">
+        <button data-gear="pistol" type="button" title="Pulse pistol"><kbd>1</kbd><span>Pulse pistol</span></button>
+        <button data-gear="scanner" type="button" title="Scanner"><kbd>2</kbd><span>Scanner</span></button>
+        <button data-gear="repair" type="button" title="Repair kit"><kbd>3</kbd><span>Repair kit</span></button>
+        <button data-gear="beacon" type="button" title="Beacon"><kbd>4</kbd><span>Beacon</span></button>
+        <button data-gear="pad" type="button" title="Data pad"><kbd>5</kbd><span>Data pad</span></button>
+      </div>
+    </section>
+
+    <div class="controls panel"><span><kbd>W A S D</kbd> Move</span><span><kbd>F</kbd> Interact</span><button id="sound" type="button" title="Mute sound" aria-label="Mute sound" aria-pressed="false">♪</button><button id="fullscreen" type="button" title="Toggle fullscreen" aria-label="Toggle fullscreen">⛶</button><button id="help" type="button" title="Open controls" aria-label="Open controls">?</button></div>
+
+    <dialog id="district-map" class="map-dialog panel" aria-labelledby="district-map-title">
+      <div class="map-heading"><h2 id="district-map-title">Breakwater map</h2><button id="map-close" type="button" autofocus>Close <kbd>M</kbd></button></div>
+      <canvas id="large-map" width="960" height="560" aria-label="Expanded district map"></canvas>
+      <div class="map-legend"><span class="legend-player">You</span><span class="legend-objective">Objective</span><span class="legend-heist">Heist</span><span class="legend-drone">Security drone</span><span class="legend-beacon">Placed beacon</span></div>
+      <h3 class="map-section">Heists</h3>
+      <div id="heist-list" class="contracts heist-list" aria-label="Heists"></div>
+      <div id="contract-list" class="contracts" aria-label="Delivery contracts" hidden></div>
+    </dialog>
+
+    <section id="overlay" class="overlay" aria-labelledby="overlay-title">
+      <div class="briefing panel">
+        <div class="briefing-tag"><span></span><b>BREAKWATER / SECTOR 07</b></div>
+        <h1 id="overlay-title">SHIFT<span>GEAR</span></h1>
+        <p id="overlay-text">Take a street car and transform it to reach a lost signal core, or track an interior heist from the city map.</p>
+        <div class="briefing-controls"><div><kbd>W A S D</kbd> Move or drive</div><div><kbd>F</kbd> Enter, exit or interact</div><div><kbd>Q / E</kbd> Ascend / descend</div><div><kbd>Space</kbd> Jump or handbrake</div><div><kbd>1–5</kbd> Inventory on foot</div><div><kbd>1–4</kbd> Modes while driving</div><div><kbd>Mouse</kbd> Look with pistol equipped</div><div><kbd>Right drag</kbd> Look with other gear</div><div><kbd>Left click</kbd> Use gear or hold for nitro</div><div><kbd>Shift</kbd> Sprint</div><div><kbd>X</kbd> Reload pulse pistol</div><div><kbd>M</kbd> Map and heists</div><div><kbd>R</kbd> Return to checkpoint</div></div>
+        <button id="play" class="primary" type="button">Enter Breakwater</button>
+      </div>
+    </section>
+  </main>
+  <!-- BUILD:GAME -->
+</body>
+</html>

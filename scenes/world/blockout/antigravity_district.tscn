@@ -1,0 +1,1973 @@
+[gd_scene load_steps=107 format=3 uid="uid://c8k2p7x6yq4nm"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_Ground"]
+albedo_color = Color(0.24, 0.38, 0.28, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Mat_Road_Asphalt"]
+albedo_color = Color(0.18, 0.20, 0.22, 1)
+roughness = 0.85
+metallic = 0.05
+
+[sub_resource type="StandardMaterial3D" id="Mat_Road_Line_Yellow"]
+albedo_color = Color(0.92, 0.84, 0.25, 1)
+roughness = 0.6
+
+[sub_resource type="StandardMaterial3D" id="Mat_Road_Line_White"]
+albedo_color = Color(0.95, 0.95, 0.95, 1)
+roughness = 0.6
+
+[sub_resource type="StandardMaterial3D" id="Mat_Sidewalk_Curb"]
+albedo_color = Color(0.55, 0.55, 0.58, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Tower_Alpha"]
+albedo_color = Color(0.22, 0.32, 0.42, 1)
+roughness = 0.45
+metallic = 0.35
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Tower_Bravo"]
+albedo_color = Color(0.28, 0.34, 0.40, 1)
+roughness = 0.50
+metallic = 0.25
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Tower_Charlie"]
+albedo_color = Color(0.25, 0.27, 0.32, 1)
+roughness = 0.55
+metallic = 0.20
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Commercial_Alpha"]
+albedo_color = Color(0.42, 0.46, 0.50, 1)
+roughness = 0.65
+metallic = 0.15
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Commercial_Bravo"]
+albedo_color = Color(0.46, 0.48, 0.44, 1)
+roughness = 0.70
+metallic = 0.10
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Commercial_Charlie"]
+albedo_color = Color(0.38, 0.42, 0.46, 1)
+roughness = 0.60
+metallic = 0.15
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Industrial_Alpha"]
+albedo_color = Color(0.52, 0.46, 0.40, 1)
+roughness = 0.85
+metallic = 0.10
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Industrial_Bravo"]
+albedo_color = Color(0.45, 0.42, 0.38, 1)
+roughness = 0.88
+metallic = 0.15
+
+[sub_resource type="StandardMaterial3D" id="Mat_Building_Industrial_Charlie"]
+albedo_color = Color(0.50, 0.48, 0.42, 1)
+roughness = 0.82
+metallic = 0.10
+
+[sub_resource type="StandardMaterial3D" id="Mat_QuayConcrete"]
+albedo_color = Color(0.48, 0.50, 0.52, 1)
+roughness = 0.85
+metallic = 0.05
+
+[sub_resource type="StandardMaterial3D" id="Mat_PierDeck"]
+albedo_color = Color(0.38, 0.35, 0.32, 1)
+roughness = 0.90
+
+[sub_resource type="StandardMaterial3D" id="Mat_Piling"]
+albedo_color = Color(0.25, 0.23, 0.22, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Mat_Bollard"]
+albedo_color = Color(0.88, 0.68, 0.15, 1)
+roughness = 0.35
+metallic = 0.60
+
+[sub_resource type="StandardMaterial3D" id="Mat_Ramp"]
+albedo_color = Color(0.76, 0.35, 0.18, 1)
+roughness = 0.75
+metallic = 0.10
+
+[sub_resource type="StandardMaterial3D" id="Mat_Runway"]
+albedo_color = Color(0.16, 0.17, 0.19, 1)
+roughness = 0.88
+metallic = 0.05
+
+[sub_resource type="StandardMaterial3D" id="Mat_RunwayLine"]
+albedo_color = Color(0.94, 0.90, 0.45, 1)
+roughness = 0.50
+
+[sub_resource type="StandardMaterial3D" id="Mat_Water"]
+transparency = 1
+albedo_color = Color(0.06, 0.44, 0.62, 0.65)
+roughness = 0.15
+
+[sub_resource type="StandardMaterial3D" id="Mat_Seabed"]
+albedo_color = Color(0.20, 0.28, 0.30, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Mat_SubmergedPlatform"]
+albedo_color = Color(0.30, 0.38, 0.42, 1)
+roughness = 0.70
+metallic = 0.20
+
+[sub_resource type="StandardMaterial3D" id="Mat_TrenchRock"]
+albedo_color = Color(0.14, 0.18, 0.20, 1)
+roughness = 0.90
+metallic = 0.05
+
+[sub_resource type="Environment" id="Environment_District"]
+background_mode = 1
+background_color = Color(0.55, 0.70, 0.78, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.68, 0.74, 0.78, 1)
+ambient_light_energy = 0.75
+
+[sub_resource type="BoxMesh" id="Mesh_GroundWest"]
+size = Vector3(80, 1, 140)
+
+[sub_resource type="BoxShape3D" id="Shape_GroundWest"]
+size = Vector3(80, 1, 140)
+
+[sub_resource type="BoxMesh" id="Mesh_GroundEastNorth"]
+size = Vector3(20, 1, 45)
+
+[sub_resource type="BoxShape3D" id="Shape_GroundEastNorth"]
+size = Vector3(20, 1, 45)
+
+[sub_resource type="BoxMesh" id="Mesh_GroundEastSouth"]
+size = Vector3(20, 1, 45)
+
+[sub_resource type="BoxShape3D" id="Shape_GroundEastSouth"]
+size = Vector3(20, 1, 45)
+
+[sub_resource type="BoxMesh" id="Mesh_GroundEastCenter"]
+size = Vector3(16, 1, 30)
+
+[sub_resource type="BoxShape3D" id="Shape_GroundEastCenter"]
+size = Vector3(16, 1, 30)
+
+[sub_resource type="BoxMesh" id="Mesh_Road_Straight"]
+size = Vector3(10, 0.1, 24)
+
+[sub_resource type="BoxShape3D" id="Shape_Road_Straight"]
+size = Vector3(10, 0.2, 24)
+
+[sub_resource type="BoxMesh" id="Mesh_Curb_Straight"]
+size = Vector3(1, 0.25, 24)
+
+[sub_resource type="BoxShape3D" id="Shape_Curb_Straight"]
+size = Vector3(1, 0.25, 24)
+
+[sub_resource type="BoxMesh" id="Mesh_Road_Dash"]
+size = Vector3(0.2, 0.015, 3)
+
+[sub_resource type="BoxMesh" id="Mesh_Road_EdgeLine"]
+size = Vector3(0.15, 0.015, 24)
+
+[sub_resource type="BoxMesh" id="Mesh_Road_24x24"]
+size = Vector3(24, 0.1, 24)
+
+[sub_resource type="BoxShape3D" id="Shape_Road_24x24"]
+size = Vector3(24, 0.2, 24)
+
+[sub_resource type="BoxMesh" id="Mesh_Plaza_6x6"]
+size = Vector3(6, 0.25, 6)
+
+[sub_resource type="BoxShape3D" id="Shape_Plaza_6x6"]
+size = Vector3(6, 0.25, 6)
+
+[sub_resource type="BoxMesh" id="Mesh_Plaza_12x12"]
+size = Vector3(12, 0.25, 12)
+
+[sub_resource type="BoxShape3D" id="Shape_Plaza_12x12"]
+size = Vector3(12, 0.25, 12)
+
+[sub_resource type="BoxMesh" id="Mesh_StopBar"]
+size = Vector3(4.5, 0.015, 0.5)
+
+[sub_resource type="BoxMesh" id="Mesh_StopBar_Z"]
+size = Vector3(0.5, 0.015, 4.5)
+
+[sub_resource type="BoxMesh" id="Mesh_Tower_Alpha"]
+size = Vector3(18, 52, 18)
+
+[sub_resource type="BoxShape3D" id="Shape_Tower_Alpha"]
+size = Vector3(18, 52, 18)
+
+[sub_resource type="BoxMesh" id="Mesh_Tower_Bravo"]
+size = Vector3(14, 44, 14)
+
+[sub_resource type="BoxShape3D" id="Shape_Tower_Bravo"]
+size = Vector3(14, 44, 14)
+
+[sub_resource type="BoxMesh" id="Mesh_Tower_Charlie"]
+size = Vector3(14, 39, 14)
+
+[sub_resource type="BoxShape3D" id="Shape_Tower_Charlie"]
+size = Vector3(14, 39, 14)
+
+[sub_resource type="BoxMesh" id="Mesh_Commercial_Alpha"]
+size = Vector3(16, 20, 14)
+
+[sub_resource type="BoxShape3D" id="Shape_Commercial_Alpha"]
+size = Vector3(16, 20, 14)
+
+[sub_resource type="BoxMesh" id="Mesh_Commercial_Bravo"]
+size = Vector3(16, 18, 14)
+
+[sub_resource type="BoxShape3D" id="Shape_Commercial_Bravo"]
+size = Vector3(16, 18, 14)
+
+[sub_resource type="BoxMesh" id="Mesh_Commercial_Charlie"]
+size = Vector3(24, 17, 12)
+
+[sub_resource type="BoxShape3D" id="Shape_Commercial_Charlie"]
+size = Vector3(24, 17, 12)
+
+[sub_resource type="BoxMesh" id="Mesh_Warehouse_Alpha"]
+size = Vector3(20, 10, 22)
+
+[sub_resource type="BoxShape3D" id="Shape_Warehouse_Alpha"]
+size = Vector3(20, 10, 22)
+
+[sub_resource type="BoxMesh" id="Mesh_Warehouse_Bravo"]
+size = Vector3(22, 12, 18)
+
+[sub_resource type="BoxShape3D" id="Shape_Warehouse_Bravo"]
+size = Vector3(22, 12, 18)
+
+[sub_resource type="BoxMesh" id="Mesh_Warehouse_Charlie"]
+size = Vector3(16, 9, 26)
+
+[sub_resource type="BoxShape3D" id="Shape_Warehouse_Charlie"]
+size = Vector3(16, 9, 26)
+
+[sub_resource type="BoxMesh" id="Mesh_Quay"]
+size = Vector3(14, 1, 90)
+
+[sub_resource type="BoxShape3D" id="Shape_Quay"]
+size = Vector3(14, 1, 90)
+
+[sub_resource type="BoxMesh" id="Mesh_SeaWall_35"]
+size = Vector3(1, 15, 35)
+
+[sub_resource type="BoxShape3D" id="Shape_SeaWall_35"]
+size = Vector3(1, 15, 35)
+
+[sub_resource type="BoxMesh" id="Mesh_Pier"]
+size = Vector3(30, 1.2, 8)
+
+[sub_resource type="BoxShape3D" id="Shape_Pier"]
+size = Vector3(30, 1.2, 8)
+
+[sub_resource type="CylinderMesh" id="Mesh_Piling"]
+top_radius = 0.45
+bottom_radius = 0.45
+height = 14
+
+[sub_resource type="CylinderShape3D" id="Shape_Piling"]
+radius = 0.45
+height = 14
+
+[sub_resource type="CylinderMesh" id="Mesh_Bollard"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.9
+
+[sub_resource type="CylinderShape3D" id="Shape_Bollard"]
+radius = 0.25
+height = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_Runway"]
+size = Vector3(20, 0.1, 80)
+
+[sub_resource type="BoxShape3D" id="Shape_Runway"]
+size = Vector3(20, 0.2, 80)
+
+[sub_resource type="BoxMesh" id="Mesh_Runway_Dash"]
+size = Vector3(0.3, 0.015, 4)
+
+[sub_resource type="BoxMesh" id="Mesh_Ramp"]
+size = Vector3(10, 0.8, 22)
+
+[sub_resource type="BoxShape3D" id="Shape_Ramp"]
+size = Vector3(10, 0.8, 22)
+
+[sub_resource type="BoxMesh" id="Mesh_RampAbutment"]
+size = Vector3(9.8, 5.6, 3)
+
+[sub_resource type="BoxShape3D" id="Shape_RampAbutment"]
+size = Vector3(9.8, 5.6, 3)
+
+[sub_resource type="BoxMesh" id="Mesh_RampCurb"]
+size = Vector3(0.3, 0.4, 22)
+
+[sub_resource type="BoxShape3D" id="Shape_RampCurb"]
+size = Vector3(0.3, 0.4, 22)
+
+[sub_resource type="BoxMesh" id="Mesh_WaterPlane"]
+size = Vector3(75, 0.05, 100)
+
+[sub_resource type="BoxMesh" id="Mesh_DescentRamp"]
+size = Vector3(52.2, 1, 20)
+
+[sub_resource type="BoxShape3D" id="Shape_DescentRamp"]
+size = Vector3(52.2, 1, 20)
+
+[sub_resource type="BoxMesh" id="Mesh_SubmergedPlatform"]
+size = Vector3(24, 2, 24)
+
+[sub_resource type="BoxShape3D" id="Shape_SubmergedPlatform"]
+size = Vector3(24, 2, 24)
+
+[sub_resource type="BoxMesh" id="Mesh_SubmergedPylon"]
+size = Vector3(2, 3, 2)
+
+[sub_resource type="BoxShape3D" id="Shape_SubmergedPylon"]
+size = Vector3(2, 3, 2)
+
+[sub_resource type="BoxMesh" id="Mesh_TrenchFloor"]
+size = Vector3(26, 1, 50)
+
+[sub_resource type="BoxShape3D" id="Shape_TrenchFloor"]
+size = Vector3(26, 1, 50)
+
+[sub_resource type="BoxMesh" id="Mesh_TrenchWall_50"]
+size = Vector3(1, 5, 50)
+
+[sub_resource type="BoxShape3D" id="Shape_TrenchWall_50"]
+size = Vector3(1, 5, 50)
+
+[sub_resource type="BoxMesh" id="Mesh_TrenchWall_26"]
+size = Vector3(26, 5, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_TrenchWall_26"]
+size = Vector3(26, 5, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_TrenchAccessRamp"]
+size = Vector3(16.8, 0.8, 12)
+
+[sub_resource type="BoxShape3D" id="Shape_TrenchAccessRamp"]
+size = Vector3(16.8, 0.8, 12)
+
+[sub_resource type="BoxMesh" id="Mesh_SeabedFloor"]
+size = Vector3(40, 1, 45)
+
+[sub_resource type="BoxShape3D" id="Shape_SeabedFloor"]
+size = Vector3(40, 1, 45)
+
+[sub_resource type="BoxMesh" id="Mesh_BasinWall_75"]
+size = Vector3(75, 16, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_BasinWall_75"]
+size = Vector3(75, 16, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_BasinWall_100"]
+size = Vector3(1, 21, 100)
+
+[sub_resource type="BoxShape3D" id="Shape_BasinWall_100"]
+size = Vector3(1, 21, 100)
+
+[node name="AntigravityDistrict" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_District")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 0, 40, 0)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="WestGround" type="StaticBody3D" parent="Terrain"]
+position = Vector3(-45, -0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/WestGround"]
+mesh = SubResource("Mesh_GroundWest")
+surface_material_override/0 = SubResource("Mat_Ground")
+
+[node name="Collision" type="CollisionShape3D" parent="Terrain/WestGround"]
+shape = SubResource("Shape_GroundWest")
+
+[node name="EastGroundNorth" type="StaticBody3D" parent="Terrain"]
+position = Vector3(20, -0.5, -37.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/EastGroundNorth"]
+mesh = SubResource("Mesh_GroundEastNorth")
+surface_material_override/0 = SubResource("Mat_Ground")
+
+[node name="Collision" type="CollisionShape3D" parent="Terrain/EastGroundNorth"]
+shape = SubResource("Shape_GroundEastNorth")
+
+[node name="EastGroundSouth" type="StaticBody3D" parent="Terrain"]
+position = Vector3(20, -0.5, 37.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/EastGroundSouth"]
+mesh = SubResource("Mesh_GroundEastSouth")
+surface_material_override/0 = SubResource("Mat_Ground")
+
+[node name="Collision" type="CollisionShape3D" parent="Terrain/EastGroundSouth"]
+shape = SubResource("Shape_GroundEastSouth")
+
+[node name="EastGroundCenter" type="StaticBody3D" parent="Terrain"]
+position = Vector3(18, -0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/EastGroundCenter"]
+mesh = SubResource("Mesh_GroundEastCenter")
+surface_material_override/0 = SubResource("Mat_Ground")
+
+[node name="Collision" type="CollisionShape3D" parent="Terrain/EastGroundCenter"]
+shape = SubResource("Shape_GroundEastCenter")
+
+[node name="RoadGrid" type="Node3D" parent="."]
+
+[node name="Intersection_Central" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(0, 0, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Intersection_Central"]
+shape = SubResource("Shape_Road_24x24")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_24x24")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="PlazaMesh_NW" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(-9, 0.125, -9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_NW" type="CollisionShape3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(-9, 0.125, -9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="PlazaMesh_NE" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(9, 0.125, -9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_NE" type="CollisionShape3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(9, 0.125, -9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="PlazaMesh_SW" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(-9, 0.125, 9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_SW" type="CollisionShape3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(-9, 0.125, 9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="PlazaMesh_SE" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(9, 0.125, 9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_SE" type="CollisionShape3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(9, 0.125, 9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="StopBar_South" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(-2.5, 0.108, 6)
+mesh = SubResource("Mesh_StopBar")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="StopBar_North" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(2.5, 0.108, -6)
+mesh = SubResource("Mesh_StopBar")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="StopBar_West" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(-6, 0.108, -2.5)
+mesh = SubResource("Mesh_StopBar_Z")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="StopBar_East" type="MeshInstance3D" parent="RoadGrid/Intersection_Central"]
+position = Vector3(6, 0.108, 2.5)
+mesh = SubResource("Mesh_StopBar_Z")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Road_Avenue_North" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(0, 0, -24)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_Avenue_North"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_North"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Road_Avenue_South" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(0, 0, 24)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_Avenue_South"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_Avenue_South"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TJunction_South" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(0, 0, 48)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/TJunction_South"]
+shape = SubResource("Shape_Road_24x24")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_24x24")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="ContinuousCurbMesh" type="MeshInstance3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="ContinuousCurbCollision" type="CollisionShape3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="PlazaMesh_Corner1" type="MeshInstance3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(9, 0.125, -9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner1" type="CollisionShape3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(9, 0.125, -9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="PlazaMesh_Corner2" type="MeshInstance3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(9, 0.125, 9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner2" type="CollisionShape3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(9, 0.125, 9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="BranchStopBar" type="MeshInstance3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(6, 0.108, 2.5)
+mesh = SubResource("Mesh_StopBar_Z")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="ThroughDash_-8" type="MeshInstance3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(0, 0.108, -8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="ThroughDash_8" type="MeshInstance3D" parent="RoadGrid/TJunction_South"]
+position = Vector3(0, 0.108, 8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Road_Cross_West" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-24, 0, 0)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_Cross_West"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_Cross_West"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TJunction_UrbanCenter" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-48, 0, 0)
+rotation_degrees = Vector3(0, -90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/TJunction_UrbanCenter"]
+shape = SubResource("Shape_Road_24x24")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_24x24")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="ContinuousCurbMesh" type="MeshInstance3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="ContinuousCurbCollision" type="CollisionShape3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="PlazaMesh_Corner1" type="MeshInstance3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(9, 0.125, -9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner1" type="CollisionShape3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(9, 0.125, -9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="PlazaMesh_Corner2" type="MeshInstance3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(9, 0.125, 9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner2" type="CollisionShape3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(9, 0.125, 9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="BranchStopBar" type="MeshInstance3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(6, 0.108, 2.5)
+mesh = SubResource("Mesh_StopBar_Z")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="ThroughDash_-8" type="MeshInstance3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(0, 0.108, -8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="ThroughDash_8" type="MeshInstance3D" parent="RoadGrid/TJunction_UrbanCenter"]
+position = Vector3(0, 0.108, 8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Road_WestBlvd_North" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-48, 0, -24)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_WestBlvd_North"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_North"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Corner_NW" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-48, 0, -48)
+rotation_degrees = Vector3(0, -90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Corner_NW"]
+shape = SubResource("Shape_Road_24x24")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_24x24")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="OuterCurbWestMesh" type="MeshInstance3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(-11.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="OuterCurbWestCollision" type="CollisionShape3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(-11.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="OuterCurbNorthMesh" type="MeshInstance3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(0, 0.125, -11.5)
+rotation_degrees = Vector3(0, 90, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="OuterCurbNorthCollision" type="CollisionShape3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(0, 0.125, -11.5)
+rotation_degrees = Vector3(0, 90, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="InnerCornerPlazaMesh" type="MeshInstance3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(6, 0.125, 6)
+mesh = SubResource("Mesh_Plaza_12x12")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="InnerCornerPlazaCollision" type="CollisionShape3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(6, 0.125, 6)
+shape = SubResource("Shape_Plaza_12x12")
+
+[node name="TurnDash_0" type="MeshInstance3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(-1.0, 0.108, 7.5)
+rotation_degrees = Vector3(0, 15, 0)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TurnDash_1" type="MeshInstance3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(2.5, 0.108, 2.5)
+rotation_degrees = Vector3(0, 45, 0)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TurnDash_2" type="MeshInstance3D" parent="RoadGrid/Corner_NW"]
+position = Vector3(7.5, 0.108, -1.0)
+rotation_degrees = Vector3(0, 75, 0)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Road_North_Connector" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-24, 0, -48)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_North_Connector"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_North_Connector"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TJunction_NorthFlight" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(0, 0, -48)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/TJunction_NorthFlight"]
+shape = SubResource("Shape_Road_24x24")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_24x24")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="ContinuousCurbMesh" type="MeshInstance3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="ContinuousCurbCollision" type="CollisionShape3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="PlazaMesh_Corner1" type="MeshInstance3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(9, 0.125, -9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner1" type="CollisionShape3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(9, 0.125, -9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="PlazaMesh_Corner2" type="MeshInstance3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(9, 0.125, 9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner2" type="CollisionShape3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(9, 0.125, 9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="BranchStopBar" type="MeshInstance3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(6, 0.108, 2.5)
+mesh = SubResource("Mesh_StopBar_Z")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="ThroughDash_-8" type="MeshInstance3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(0, 0.108, -8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="ThroughDash_8" type="MeshInstance3D" parent="RoadGrid/TJunction_NorthFlight"]
+position = Vector3(0, 0.108, 8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Road_WestBlvd_South" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-48, 0, 24)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_WestBlvd_South"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_WestBlvd_South"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Corner_SW" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-48, 0, 48)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Corner_SW"]
+shape = SubResource("Shape_Road_24x24")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_24x24")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="OuterCurbWestMesh" type="MeshInstance3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(-11.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="OuterCurbWestCollision" type="CollisionShape3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(-11.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="OuterCurbSouthMesh" type="MeshInstance3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(0, 0.125, -11.5)
+rotation_degrees = Vector3(0, 90, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="OuterCurbSouthCollision" type="CollisionShape3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(0, 0.125, -11.5)
+rotation_degrees = Vector3(0, 90, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="InnerCornerPlazaMesh" type="MeshInstance3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(6, 0.125, 6)
+mesh = SubResource("Mesh_Plaza_12x12")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="InnerCornerPlazaCollision" type="CollisionShape3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(6, 0.125, 6)
+shape = SubResource("Shape_Plaza_12x12")
+
+[node name="TurnDash_0" type="MeshInstance3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(-1.0, 0.108, 7.5)
+rotation_degrees = Vector3(0, 15, 0)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TurnDash_1" type="MeshInstance3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(2.5, 0.108, 2.5)
+rotation_degrees = Vector3(0, 45, 0)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TurnDash_2" type="MeshInstance3D" parent="RoadGrid/Corner_SW"]
+position = Vector3(7.5, 0.108, -1.0)
+rotation_degrees = Vector3(0, 75, 0)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Road_South_Connector" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(-24, 0, 48)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_South_Connector"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_South_Connector"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Road_Port_Approach" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(18, 0, 0)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/Road_Port_Approach"]
+shape = SubResource("Shape_Road_Straight")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_Straight")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="CurbLeftMesh" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(-5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbLeftCollision" type="CollisionShape3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(-5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="CurbRightMesh" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(5.5, 0.125, 0)
+mesh = SubResource("Mesh_Curb_Straight")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="CurbRightCollision" type="CollisionShape3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(5.5, 0.125, 0)
+shape = SubResource("Shape_Curb_Straight")
+
+[node name="EdgeLineLeft" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(-4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="EdgeLineRight" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(4.75, 0.108, 0)
+mesh = SubResource("Mesh_Road_EdgeLine")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="Dash_-9" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(0, 0.108, -9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_-3" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(0, 0.108, -3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_3" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(0, 0.108, 3)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Dash_9" type="MeshInstance3D" parent="RoadGrid/Road_Port_Approach"]
+position = Vector3(0, 0.108, 9)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="TJunction_PortQuay" type="StaticBody3D" parent="RoadGrid"]
+position = Vector3(30, 0, 0)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="RoadCollision" type="CollisionShape3D" parent="RoadGrid/TJunction_PortQuay"]
+shape = SubResource("Shape_Road_24x24")
+
+[node name="RoadMesh" type="MeshInstance3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("Mesh_Road_24x24")
+surface_material_override/0 = SubResource("Mat_Road_Asphalt")
+
+[node name="PlazaMesh_Corner1" type="MeshInstance3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(9, 0.125, -9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner1" type="CollisionShape3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(9, 0.125, -9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="PlazaMesh_Corner2" type="MeshInstance3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(9, 0.125, 9)
+mesh = SubResource("Mesh_Plaza_6x6")
+surface_material_override/0 = SubResource("Mat_Sidewalk_Curb")
+
+[node name="PlazaCollision_Corner2" type="CollisionShape3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(9, 0.125, 9)
+shape = SubResource("Shape_Plaza_6x6")
+
+[node name="BranchStopBar" type="MeshInstance3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(6, 0.108, 2.5)
+mesh = SubResource("Mesh_StopBar_Z")
+surface_material_override/0 = SubResource("Mat_Road_Line_White")
+
+[node name="ThroughDash_-8" type="MeshInstance3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(0, 0.108, -8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="ThroughDash_8" type="MeshInstance3D" parent="RoadGrid/TJunction_PortQuay"]
+position = Vector3(0, 0.108, 8)
+mesh = SubResource("Mesh_Road_Dash")
+surface_material_override/0 = SubResource("Mat_Road_Line_Yellow")
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="Downtown" type="Node3D" parent="Buildings"]
+
+[node name="DowntownTower_Alpha" type="StaticBody3D" parent="Buildings/Downtown"]
+position = Vector3(-24, 26, -24)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Downtown/DowntownTower_Alpha"]
+mesh = SubResource("Mesh_Tower_Alpha")
+surface_material_override/0 = SubResource("Mat_Building_Tower_Alpha")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Downtown/DowntownTower_Alpha"]
+shape = SubResource("Shape_Tower_Alpha")
+
+[node name="DowntownTower_Bravo" type="StaticBody3D" parent="Buildings/Downtown"]
+position = Vector3(-38, 22, -14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Downtown/DowntownTower_Bravo"]
+mesh = SubResource("Mesh_Tower_Bravo")
+surface_material_override/0 = SubResource("Mat_Building_Tower_Bravo")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Downtown/DowntownTower_Bravo"]
+shape = SubResource("Shape_Tower_Bravo")
+
+[node name="DowntownTower_Charlie" type="StaticBody3D" parent="Buildings/Downtown"]
+position = Vector3(-14, 19.5, -38)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Downtown/DowntownTower_Charlie"]
+mesh = SubResource("Mesh_Tower_Charlie")
+surface_material_override/0 = SubResource("Mat_Building_Tower_Charlie")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Downtown/DowntownTower_Charlie"]
+shape = SubResource("Shape_Tower_Charlie")
+
+[node name="Commercial" type="Node3D" parent="Buildings"]
+
+[node name="CommercialOffice_Alpha" type="StaticBody3D" parent="Buildings/Commercial"]
+position = Vector3(-16, 10, 16)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Commercial/CommercialOffice_Alpha"]
+mesh = SubResource("Mesh_Commercial_Alpha")
+surface_material_override/0 = SubResource("Mat_Building_Commercial_Alpha")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Commercial/CommercialOffice_Alpha"]
+shape = SubResource("Shape_Commercial_Alpha")
+
+[node name="CommercialOffice_Bravo" type="StaticBody3D" parent="Buildings/Commercial"]
+position = Vector3(-34, 9, 16)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Commercial/CommercialOffice_Bravo"]
+mesh = SubResource("Mesh_Commercial_Bravo")
+surface_material_override/0 = SubResource("Mat_Building_Commercial_Bravo")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Commercial/CommercialOffice_Bravo"]
+shape = SubResource("Shape_Commercial_Bravo")
+
+[node name="CommercialOffice_Charlie" type="StaticBody3D" parent="Buildings/Commercial"]
+position = Vector3(-25, 8.5, 34)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Commercial/CommercialOffice_Charlie"]
+mesh = SubResource("Mesh_Commercial_Charlie")
+surface_material_override/0 = SubResource("Mat_Building_Commercial_Charlie")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Commercial/CommercialOffice_Charlie"]
+shape = SubResource("Shape_Commercial_Charlie")
+
+[node name="Industrial" type="Node3D" parent="Buildings"]
+
+[node name="Warehouse_Alpha" type="StaticBody3D" parent="Buildings/Industrial"]
+position = Vector3(-64, 5, 18)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Industrial/Warehouse_Alpha"]
+mesh = SubResource("Mesh_Warehouse_Alpha")
+surface_material_override/0 = SubResource("Mat_Building_Industrial_Alpha")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Industrial/Warehouse_Alpha"]
+shape = SubResource("Shape_Warehouse_Alpha")
+
+[node name="Warehouse_Bravo" type="StaticBody3D" parent="Buildings/Industrial"]
+position = Vector3(-64, 6, 40)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Industrial/Warehouse_Bravo"]
+mesh = SubResource("Mesh_Warehouse_Bravo")
+surface_material_override/0 = SubResource("Mat_Building_Industrial_Bravo")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Industrial/Warehouse_Bravo"]
+shape = SubResource("Shape_Warehouse_Bravo")
+
+[node name="Warehouse_Charlie" type="StaticBody3D" parent="Buildings/Industrial"]
+position = Vector3(38, 4.5, -28)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Industrial/Warehouse_Charlie"]
+mesh = SubResource("Mesh_Warehouse_Charlie")
+surface_material_override/0 = SubResource("Mat_Building_Industrial_Charlie")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Industrial/Warehouse_Charlie"]
+shape = SubResource("Shape_Warehouse_Charlie")
+
+[node name="PortArea" type="Node3D" parent="."]
+
+[node name="ConcreteQuay" type="StaticBody3D" parent="PortArea"]
+position = Vector3(37, -0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/ConcreteQuay"]
+mesh = SubResource("Mesh_Quay")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/ConcreteQuay"]
+shape = SubResource("Shape_Quay")
+
+[node name="SeaWall_North" type="StaticBody3D" parent="PortArea"]
+position = Vector3(44, -7.5, -27.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/SeaWall_North"]
+mesh = SubResource("Mesh_SeaWall_35")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/SeaWall_North"]
+shape = SubResource("Shape_SeaWall_35")
+
+[node name="SeaWall_South" type="StaticBody3D" parent="PortArea"]
+position = Vector3(44, -7.5, 27.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/SeaWall_South"]
+mesh = SubResource("Mesh_SeaWall_35")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/SeaWall_South"]
+shape = SubResource("Shape_SeaWall_35")
+
+[node name="Pier_North" type="StaticBody3D" parent="PortArea"]
+position = Vector3(59, -0.55, -22)
+
+[node name="DeckMesh" type="MeshInstance3D" parent="PortArea/Pier_North"]
+mesh = SubResource("Mesh_Pier")
+surface_material_override/0 = SubResource("Mat_PierDeck")
+
+[node name="DeckCollision" type="CollisionShape3D" parent="PortArea/Pier_North"]
+shape = SubResource("Shape_Pier")
+
+[node name="PilingMesh_0" type="MeshInstance3D" parent="PortArea/Pier_North"]
+position = Vector3(-9, -6.95, -3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_0" type="CollisionShape3D" parent="PortArea/Pier_North"]
+position = Vector3(-9, -6.95, -3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_1" type="MeshInstance3D" parent="PortArea/Pier_North"]
+position = Vector3(-9, -6.95, 3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_1" type="CollisionShape3D" parent="PortArea/Pier_North"]
+position = Vector3(-9, -6.95, 3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_2" type="MeshInstance3D" parent="PortArea/Pier_North"]
+position = Vector3(1, -6.95, -3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_2" type="CollisionShape3D" parent="PortArea/Pier_North"]
+position = Vector3(1, -6.95, -3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_3" type="MeshInstance3D" parent="PortArea/Pier_North"]
+position = Vector3(1, -6.95, 3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_3" type="CollisionShape3D" parent="PortArea/Pier_North"]
+position = Vector3(1, -6.95, 3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_4" type="MeshInstance3D" parent="PortArea/Pier_North"]
+position = Vector3(11, -6.95, -3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_4" type="CollisionShape3D" parent="PortArea/Pier_North"]
+position = Vector3(11, -6.95, -3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_5" type="MeshInstance3D" parent="PortArea/Pier_North"]
+position = Vector3(11, -6.95, 3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_5" type="CollisionShape3D" parent="PortArea/Pier_North"]
+position = Vector3(11, -6.95, 3)
+shape = SubResource("Shape_Piling")
+
+[node name="Pier_South" type="StaticBody3D" parent="PortArea"]
+position = Vector3(59, -0.55, 22)
+
+[node name="DeckMesh" type="MeshInstance3D" parent="PortArea/Pier_South"]
+mesh = SubResource("Mesh_Pier")
+surface_material_override/0 = SubResource("Mat_PierDeck")
+
+[node name="DeckCollision" type="CollisionShape3D" parent="PortArea/Pier_South"]
+shape = SubResource("Shape_Pier")
+
+[node name="PilingMesh_0" type="MeshInstance3D" parent="PortArea/Pier_South"]
+position = Vector3(-9, -6.95, -3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_0" type="CollisionShape3D" parent="PortArea/Pier_South"]
+position = Vector3(-9, -6.95, -3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_1" type="MeshInstance3D" parent="PortArea/Pier_South"]
+position = Vector3(-9, -6.95, 3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_1" type="CollisionShape3D" parent="PortArea/Pier_South"]
+position = Vector3(-9, -6.95, 3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_2" type="MeshInstance3D" parent="PortArea/Pier_South"]
+position = Vector3(1, -6.95, -3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_2" type="CollisionShape3D" parent="PortArea/Pier_South"]
+position = Vector3(1, -6.95, -3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_3" type="MeshInstance3D" parent="PortArea/Pier_South"]
+position = Vector3(1, -6.95, 3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_3" type="CollisionShape3D" parent="PortArea/Pier_South"]
+position = Vector3(1, -6.95, 3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_4" type="MeshInstance3D" parent="PortArea/Pier_South"]
+position = Vector3(11, -6.95, -3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_4" type="CollisionShape3D" parent="PortArea/Pier_South"]
+position = Vector3(11, -6.95, -3)
+shape = SubResource("Shape_Piling")
+
+[node name="PilingMesh_5" type="MeshInstance3D" parent="PortArea/Pier_South"]
+position = Vector3(11, -6.95, 3)
+mesh = SubResource("Mesh_Piling")
+surface_material_override/0 = SubResource("Mat_Piling")
+
+[node name="PilingCollision_5" type="CollisionShape3D" parent="PortArea/Pier_South"]
+position = Vector3(11, -6.95, 3)
+shape = SubResource("Shape_Piling")
+
+[node name="Bollards" type="Node3D" parent="PortArea"]
+
+[node name="Bollard_Quay_1" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, -40)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_1"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_1"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_Quay_2" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, -32)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_2"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_2"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_Quay_3" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, -14)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_3"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_3"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_Quay_4" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, -11)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_4"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_4"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_Quay_5" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, 11)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_5"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_5"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_Quay_6" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, 14)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_6"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_6"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_Quay_7" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, 32)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_7"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_7"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_Quay_8" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(43.5, 0.45, 40)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_Quay_8"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_Quay_8"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierNorth_1" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(58, 0.50, -25)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierNorth_1"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierNorth_1"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierNorth_2" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(58, 0.50, -19)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierNorth_2"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierNorth_2"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierNorth_3" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(73, 0.50, -25)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierNorth_3"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierNorth_3"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierNorth_4" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(73, 0.50, -19)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierNorth_4"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierNorth_4"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierSouth_1" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(58, 0.50, 19)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierSouth_1"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierSouth_1"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierSouth_2" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(58, 0.50, 25)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierSouth_2"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierSouth_2"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierSouth_3" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(73, 0.50, 19)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierSouth_3"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierSouth_3"]
+shape = SubResource("Shape_Bollard")
+
+[node name="Bollard_PierSouth_4" type="StaticBody3D" parent="PortArea/Bollards"]
+position = Vector3(73, 0.50, 25)
+
+[node name="Mesh" type="MeshInstance3D" parent="PortArea/Bollards/Bollard_PierSouth_4"]
+mesh = SubResource("Mesh_Bollard")
+surface_material_override/0 = SubResource("Mat_Bollard")
+
+[node name="Collision" type="CollisionShape3D" parent="PortArea/Bollards/Bollard_PierSouth_4"]
+shape = SubResource("Shape_Bollard")
+
+[node name="FlightTestingArea" type="Node3D" parent="."]
+
+[node name="FlightRunway" type="StaticBody3D" parent="FlightTestingArea"]
+position = Vector3(0, 0.05, -30)
+
+[node name="Mesh" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+mesh = SubResource("Mesh_Runway")
+surface_material_override/0 = SubResource("Mat_Runway")
+
+[node name="Collision" type="CollisionShape3D" parent="FlightTestingArea/FlightRunway"]
+shape = SubResource("Shape_Runway")
+
+[node name="RunwayDash_0" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, 10.00)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_1" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, 2.50)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_2" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -5.00)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_3" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -12.50)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_4" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -20.00)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_5" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -27.50)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_6" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -35.00)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_7" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -42.50)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_8" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -50.00)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="RunwayDash_9" type="MeshInstance3D" parent="FlightTestingArea/FlightRunway"]
+position = Vector3(0, 0.108, -57.50)
+mesh = SubResource("Mesh_Runway_Dash")
+surface_material_override/0 = SubResource("Mat_RunwayLine")
+
+[node name="TakeoffRamp" type="StaticBody3D" parent="FlightTestingArea"]
+position = Vector3(0, 3, -80.57)
+rotation_degrees = Vector3(16, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="FlightTestingArea/TakeoffRamp"]
+mesh = SubResource("Mesh_Ramp")
+surface_material_override/0 = SubResource("Mat_Ramp")
+
+[node name="Collision" type="CollisionShape3D" parent="FlightTestingArea/TakeoffRamp"]
+shape = SubResource("Shape_Ramp")
+
+[node name="LeftCurbMesh" type="MeshInstance3D" parent="FlightTestingArea/TakeoffRamp"]
+position = Vector3(-4.85, 0.4, 0)
+mesh = SubResource("Mesh_RampCurb")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="LeftCurbCollision" type="CollisionShape3D" parent="FlightTestingArea/TakeoffRamp"]
+position = Vector3(-4.85, 0.4, 0)
+shape = SubResource("Shape_RampCurb")
+
+[node name="RightCurbMesh" type="MeshInstance3D" parent="FlightTestingArea/TakeoffRamp"]
+position = Vector3(4.85, 0.4, 0)
+mesh = SubResource("Mesh_RampCurb")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="RightCurbCollision" type="CollisionShape3D" parent="FlightTestingArea/TakeoffRamp"]
+position = Vector3(4.85, 0.4, 0)
+shape = SubResource("Shape_RampCurb")
+
+[node name="RampAbutment" type="StaticBody3D" parent="FlightTestingArea"]
+position = Vector3(0, 2.8, -89.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="FlightTestingArea/RampAbutment"]
+mesh = SubResource("Mesh_RampAbutment")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="Collision" type="CollisionShape3D" parent="FlightTestingArea/RampAbutment"]
+shape = SubResource("Shape_RampAbutment")
+
+[node name="DeepUnderwaterArea" type="Node3D" parent="."]
+
+[node name="WaterSurface" type="MeshInstance3D" parent="DeepUnderwaterArea"]
+position = Vector3(75, 0.02, 0)
+mesh = SubResource("Mesh_WaterPlane")
+surface_material_override/0 = SubResource("Mat_Water")
+
+[node name="ShorelineDescentRamp" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(67, -7.5, 0)
+rotation_degrees = Vector3(0, 0, -16.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/ShorelineDescentRamp"]
+mesh = SubResource("Mesh_DescentRamp")
+surface_material_override/0 = SubResource("Mat_Seabed")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/ShorelineDescentRamp"]
+shape = SubResource("Shape_DescentRamp")
+
+[node name="SubmergedPlatform" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(68, -11, -30)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+mesh = SubResource("Mesh_SubmergedPlatform")
+surface_material_override/0 = SubResource("Mat_SubmergedPlatform")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+shape = SubResource("Shape_SubmergedPlatform")
+
+[node name="PylonMesh_0" type="MeshInstance3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(-10, -2.5, -10)
+mesh = SubResource("Mesh_SubmergedPylon")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="PylonCollision_0" type="CollisionShape3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(-10, -2.5, -10)
+shape = SubResource("Shape_SubmergedPylon")
+
+[node name="PylonMesh_1" type="MeshInstance3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(-10, -2.5, 10)
+mesh = SubResource("Mesh_SubmergedPylon")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="PylonCollision_1" type="CollisionShape3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(-10, -2.5, 10)
+shape = SubResource("Shape_SubmergedPylon")
+
+[node name="PylonMesh_2" type="MeshInstance3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(10, -2.5, -10)
+mesh = SubResource("Mesh_SubmergedPylon")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="PylonCollision_2" type="CollisionShape3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(10, -2.5, -10)
+shape = SubResource("Shape_SubmergedPylon")
+
+[node name="PylonMesh_3" type="MeshInstance3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(10, -2.5, 10)
+mesh = SubResource("Mesh_SubmergedPylon")
+surface_material_override/0 = SubResource("Mat_QuayConcrete")
+
+[node name="PylonCollision_3" type="CollisionShape3D" parent="DeepUnderwaterArea/SubmergedPlatform"]
+position = Vector3(10, -2.5, 10)
+shape = SubResource("Shape_SubmergedPylon")
+
+[node name="DeepTrenchFloor" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(95, -20.5, 15)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/DeepTrenchFloor"]
+mesh = SubResource("Mesh_TrenchFloor")
+surface_material_override/0 = SubResource("Mat_TrenchRock")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/DeepTrenchFloor"]
+shape = SubResource("Shape_TrenchFloor")
+
+[node name="Trench_WestWall" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(81.5, -17.5, 15)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/Trench_WestWall"]
+mesh = SubResource("Mesh_TrenchWall_50")
+surface_material_override/0 = SubResource("Mat_TrenchRock")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/Trench_WestWall"]
+shape = SubResource("Shape_TrenchWall_50")
+
+[node name="Trench_NorthWall" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(95, -17.5, -10.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/Trench_NorthWall"]
+mesh = SubResource("Mesh_TrenchWall_26")
+surface_material_override/0 = SubResource("Mat_TrenchRock")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/Trench_NorthWall"]
+shape = SubResource("Shape_TrenchWall_26")
+
+[node name="Trench_SouthWall" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(95, -17.5, 40.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/Trench_SouthWall"]
+mesh = SubResource("Mesh_TrenchWall_26")
+surface_material_override/0 = SubResource("Mat_TrenchRock")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/Trench_SouthWall"]
+shape = SubResource("Shape_TrenchWall_26")
+
+[node name="TrenchAccessRamp" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(81.5, -17.5, 0)
+rotation_degrees = Vector3(0, 0, -17.35)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/TrenchAccessRamp"]
+mesh = SubResource("Mesh_TrenchAccessRamp")
+surface_material_override/0 = SubResource("Mat_TrenchRock")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/TrenchAccessRamp"]
+shape = SubResource("Shape_TrenchAccessRamp")
+
+[node name="Seabed_Floor" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(68, -15.5, 27.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/Seabed_Floor"]
+mesh = SubResource("Mesh_SeabedFloor")
+surface_material_override/0 = SubResource("Mat_Seabed")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/Seabed_Floor"]
+shape = SubResource("Shape_SeabedFloor")
+
+[node name="NorthBasinWall" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(75, -8, -50.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/NorthBasinWall"]
+mesh = SubResource("Mesh_BasinWall_75")
+surface_material_override/0 = SubResource("Mat_Seabed")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/NorthBasinWall"]
+shape = SubResource("Shape_BasinWall_75")
+
+[node name="SouthBasinWall" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(75, -8, 50.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/SouthBasinWall"]
+mesh = SubResource("Mesh_BasinWall_75")
+surface_material_override/0 = SubResource("Mat_Seabed")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/SouthBasinWall"]
+shape = SubResource("Shape_BasinWall_75")
+
+[node name="EastBasinWall" type="StaticBody3D" parent="DeepUnderwaterArea"]
+position = Vector3(113, -10.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="DeepUnderwaterArea/EastBasinWall"]
+mesh = SubResource("Mesh_BasinWall_100")
+surface_material_override/0 = SubResource("Mat_Seabed")
+
+[node name="Collision" type="CollisionShape3D" parent="DeepUnderwaterArea/EastBasinWall"]
+shape = SubResource("Shape_BasinWall_100")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/world/prototype_world.tscn" id="1_world"]
+[ext_resource type="PackedScene" path="res://scenes/vehicles/test_car.tscn" id="2_car"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3_player"]
+[ext_resource type="Script" path="res://scripts/ui/game_hud.gd" id="4_hud"]
+
+[node name="SHIFTGEAR" type="Node3D"]
+
+[node name="PrototypeWorld" parent="." instance=ExtResource("1_world")]
+
+[node name="TestCar" parent="." instance=ExtResource("2_car")]
+position = Vector3(-11.0, 0.72, 0.0)
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+position = Vector3(-11.0, 0.1, 4.2)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_hud")

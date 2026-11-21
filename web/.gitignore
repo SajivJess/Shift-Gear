@@ -1,0 +1,9 @@
+/node_modules/
+/dist/
+/SHIFTGEAR-Breakwater.zip
+
+# Local files from the earlier unbundled browser prototype
+/index.html
+/game.js
+/style.css
+/js/

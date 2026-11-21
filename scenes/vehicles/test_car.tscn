@@ -1,0 +1,198 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="Script" path="res://scripts/vehicles/shiftgear_vehicle.gd" id="1_vehicle"]
+[ext_resource type="Resource" path="res://resources/vehicles/default_nanotech_profile.tres" id="2_profile"]
+
+[sub_resource type="BoxShape3D" id="BoxShape_car"]
+size = Vector3(1.9, 0.72, 3.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_car"]
+size = Vector3(1.9, 0.72, 3.9)
+
+[sub_resource type="StandardMaterial3D" id="Material_car"]
+albedo_color = Color(0.14, 0.2, 0.24, 1)
+metallic = 0.22
+roughness = 0.55
+
+[sub_resource type="BoxMesh" id="BoxMesh_roof"]
+size = Vector3(1.55, 0.62, 1.8)
+
+[sub_resource type="StandardMaterial3D" id="Material_glass"]
+albedo_color = Color(0.13, 0.38, 0.45, 0.85)
+roughness = 0.25
+metallic = 0.15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wheel"]
+top_radius = 0.34
+bottom_radius = 0.34
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="Material_wheel"]
+albedo_color = Color(0.075, 0.085, 0.09, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="BoxMesh_spoiler"]
+size = Vector3(2.25, 0.12, 0.42)
+
+[sub_resource type="StandardMaterial3D" id="Material_supercar"]
+albedo_color = Color(0.13, 0.75, 0.86, 1)
+emission_enabled = true
+emission = Color(0.02, 0.32, 0.4, 1)
+roughness = 0.42
+
+[sub_resource type="BoxMesh" id="BoxMesh_wing"]
+size = Vector3(4.8, 0.12, 0.95)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_thruster"]
+top_radius = 0.3
+bottom_radius = 0.48
+height = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Material_flight"]
+albedo_color = Color(0.82, 0.48, 0.2, 1)
+emission_enabled = true
+emission = Color(0.38, 0.11, 0.025, 1)
+roughness = 0.55
+
+[sub_resource type="BoxMesh" id="BoxMesh_fin"]
+size = Vector3(0.16, 1.2, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="Material_underwater"]
+albedo_color = Color(0.26, 0.73, 0.77, 1)
+emission_enabled = true
+emission = Color(0.02, 0.2, 0.23, 1)
+roughness = 0.6
+
+[node name="TestCar" type="RigidBody3D"]
+mass = 1250.0
+linear_damp = 0.08
+angular_damp = 0.85
+continuous_cd = true
+script = ExtResource("1_vehicle")
+nanotech_profile = ExtResource("2_profile")
+vehicle_label = "Prototype Sedan"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape_car")
+
+[node name="CarBody" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_car")
+surface_material_override/0 = SubResource("Material_car")
+
+[node name="Cabin" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.56, 0.05)
+mesh = SubResource("BoxMesh_roof")
+surface_material_override/0 = SubResource("Material_glass")
+
+[node name="Wheels" type="Node3D" parent="."]
+
+[node name="FrontLeft" type="MeshInstance3D" parent="Wheels"]
+position = Vector3(-0.98, -0.32, -1.2)
+rotation_degrees = Vector3(0, 0, 90)
+mesh = SubResource("CylinderMesh_wheel")
+surface_material_override/0 = SubResource("Material_wheel")
+
+[node name="FrontRight" type="MeshInstance3D" parent="Wheels"]
+position = Vector3(0.98, -0.32, -1.2)
+rotation_degrees = Vector3(0, 0, 90)
+mesh = SubResource("CylinderMesh_wheel")
+surface_material_override/0 = SubResource("Material_wheel")
+
+[node name="RearLeft" type="MeshInstance3D" parent="Wheels"]
+position = Vector3(-0.98, -0.32, 1.2)
+rotation_degrees = Vector3(0, 0, 90)
+mesh = SubResource("CylinderMesh_wheel")
+surface_material_override/0 = SubResource("Material_wheel")
+
+[node name="RearRight" type="MeshInstance3D" parent="Wheels"]
+position = Vector3(0.98, -0.32, 1.2)
+rotation_degrees = Vector3(0, 0, 90)
+mesh = SubResource("CylinderMesh_wheel")
+surface_material_override/0 = SubResource("Material_wheel")
+
+[node name="NanotechAttachments" type="Node3D" parent="."]
+
+[node name="SupercarKit" type="Node3D" parent="NanotechAttachments"]
+visible = false
+
+[node name="Spoiler" type="MeshInstance3D" parent="NanotechAttachments/SupercarKit"]
+position = Vector3(0, 0.58, 1.82)
+mesh = SubResource("BoxMesh_spoiler")
+surface_material_override/0 = SubResource("Material_supercar")
+
+[node name="FlightKit" type="Node3D" parent="NanotechAttachments"]
+visible = false
+
+[node name="Wings" type="MeshInstance3D" parent="NanotechAttachments/FlightKit"]
+position = Vector3(0, 0.25, 0.1)
+mesh = SubResource("BoxMesh_wing")
+surface_material_override/0 = SubResource("Material_flight")
+
+[node name="LeftThruster" type="MeshInstance3D" parent="NanotechAttachments/FlightKit"]
+position = Vector3(-0.7, 0.08, 1.8)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("CylinderMesh_thruster")
+surface_material_override/0 = SubResource("Material_flight")
+
+[node name="RightThruster" type="MeshInstance3D" parent="NanotechAttachments/FlightKit"]
+position = Vector3(0.7, 0.08, 1.8)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("CylinderMesh_thruster")
+surface_material_override/0 = SubResource("Material_flight")
+
+[node name="UnderwaterKit" type="Node3D" parent="NanotechAttachments"]
+visible = false
+
+[node name="LeftFin" type="MeshInstance3D" parent="NanotechAttachments/UnderwaterKit"]
+position = Vector3(-1.0, 0.08, 0.2)
+mesh = SubResource("BoxMesh_fin")
+surface_material_override/0 = SubResource("Material_underwater")
+
+[node name="RightFin" type="MeshInstance3D" parent="NanotechAttachments/UnderwaterKit"]
+position = Vector3(1.0, 0.08, 0.2)
+mesh = SubResource("BoxMesh_fin")
+surface_material_override/0 = SubResource("Material_underwater")
+
+[node name="FrontHydrojet" type="MeshInstance3D" parent="NanotechAttachments/UnderwaterKit"]
+position = Vector3(0, 0.0, -1.95)
+mesh = SubResource("CylinderMesh_thruster")
+surface_material_override/0 = SubResource("Material_underwater")
+
+[node name="WheelRays" type="Node3D" parent="."]
+
+[node name="FrontLeft" type="RayCast3D" parent="WheelRays"]
+position = Vector3(-0.84, -0.05, -1.2)
+target_position = Vector3(0, -0.85, 0)
+enabled = true
+
+[node name="FrontRight" type="RayCast3D" parent="WheelRays"]
+position = Vector3(0.84, -0.05, -1.2)
+target_position = Vector3(0, -0.85, 0)
+enabled = true
+
+[node name="RearLeft" type="RayCast3D" parent="WheelRays"]
+position = Vector3(-0.84, -0.05, 1.2)
+target_position = Vector3(0, -0.85, 0)
+enabled = true
+
+[node name="RearRight" type="RayCast3D" parent="WheelRays"]
+position = Vector3(0.84, -0.05, 1.2)
+target_position = Vector3(0, -0.85, 0)
+enabled = true
+
+[node name="ExitMarker" type="Marker3D" parent="."]
+position = Vector3(-1.55, -0.3, 0.0)
+
+[node name="DriverSeat" type="Marker3D" parent="."]
+position = Vector3(0.0, 0.0, -0.15)
+
+[node name="CameraPivot" type="Node3D" parent="."]
+position = Vector3(0, 1.5, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+spring_length = 6.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+current = false
+fov = 78.0

@@ -1,0 +1,30 @@
+# Godot 4+ specific ignores
+/.godot/
+/android/
+/.vs/
+
+# Local dependency and asset evaluation
+/addons/
+/resources/shaders/dissolve/
+
+# Local coordination, experiments, and machine-specific QA
+/docs/agent-sync-log.md
+/docs/antigravity-brief.md
+/docs/asset-audit.md
+/docs/combined-roadmap.md
+/docs/tri-biome-world-design.md
+/docs/web-mission-handoff.md
+/tests/e2e/
+/tools/agent_sync.py
+
+# Local configuration and build products
+/.vscode/
+/.idea/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+__pycache__/
+*.log
+*.pck
